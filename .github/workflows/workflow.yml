@@ -30,26 +30,32 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Runs a single command using the runners shell
-      - name: Rename files
-        run: |
-          ls -ltr
-          echo "renaming a.txt to a_original.txt"
-          mv a.txt a_original.txt
-          echo "renaming b.txt to a.txt"
-          mv b.txt a.txt
-          ls -ltr
-          cat a.txt
+#       # Runs a single command using the runners shell
+#       - name: Rename files
+#         run: |
+#           ls -ltr
+#           echo "renaming a.txt to a_original.txt"
+#           mv a.txt a_original.txt
+#           echo "renaming b.txt to a.txt"
+#           mv b.txt a.txt
+#           ls -ltr
+#           cat a.txt
           
 
       # Runs a set of commands using the runners shell
       - name: Sync code to clone-project
         run: |
           echo "clone from parent-project"
-          ls -ltr        
+          ls -ltr      
           git remote add sud https://gitlab.com/sudarsana/clone-project.git        
           git remote -v
           git checkout main
           git pull
+          echo "renaming a.txt to a_original.txt"
+          mv a.txt a_original.txt
+          echo "renaming b.txt to a.txt"
+          mv b.txt a.txt
+          ls -ltr
+          cat a.txt
           git push -f -u https://oauth2:${{secrets.GITLAB_TOKEN}}@gitlab.com/sudarsana/clone-project.git main
         shell: bash

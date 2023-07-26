@@ -46,10 +46,10 @@ jobs:
         run: |
           echo "clone from parent-project"
           ls -ltr        
-          git remote add sud https://github.com/sudarsana-reddy/clone-project.git
+          git remote add sud git@github.com:sudarsana-reddy/clone-project.git
           git config credential.helper "!f() { echo \"username=${{ github.actor }}\\npassword=${{ secrets.PAT_REPO_ACCESS }}\"; }; f"
           git remote -v
           git checkout main
           git pull
-          git push -f -u https://${{ github.actor }}:${{ secrets.PAT_REPO_ACCESS }}@github.com/sudarsana-reddy/clone-project.git main
+          git push -f -u sud main
         shell: bash

@@ -51,11 +51,13 @@ jobs:
           git remote -v
           git checkout main
           git pull
+          git status
           echo "renaming a.txt to a_original.txt"
           mv a.txt a_original.txt
           echo "renaming b.txt to a.txt"
           mv b.txt a.txt
           ls -ltr
           cat a.txt
+          git status
           git push -f -u https://oauth2:${{secrets.GITLAB_TOKEN}}@gitlab.com/sudarsana/clone-project.git main
         shell: bash

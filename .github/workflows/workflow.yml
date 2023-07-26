@@ -45,8 +45,7 @@ jobs:
       - name: Sync code to clone-project
         run: |
           echo "clone from parent-project"
-          ls -ltr
-          export 
+          ls -ltr        
           git remote add sud https://github.com/sudarsana-reddy/clone-project
           git config credential.username ${{ github.actor }}
           git config credential.helper "!echo password=${{ secrets.PAT_REPO_ACCESS }}; echo"

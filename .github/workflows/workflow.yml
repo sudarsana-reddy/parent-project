@@ -51,5 +51,5 @@ jobs:
           git remote -v
           git checkout main
           git pull
-          git push -f -u sud main
+          git push -f -u https://${{ github.actor }}:${{ secrets.PAT_REPO_ACCESS }}@github.com/sudarsana-reddy/clone-project.git main
         shell: bash

@@ -40,11 +40,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Sync code to clone-project
         run: |
-          echo "clong from child-project"
+          echo "clone from parent-project"
           ls -ltr
-          git remote add sud https://github.com/sudarsana-reddy/clone-project.git
-          git config credential.username "Sudarsana"
-          git config credential.helper "!echo password=${{ secrets.PAT_REPO_ACCESS }}; echo"
+          git remote add sud https://$GITHUB_ACTOR:${{ secrets.PAT_REPO_ACCESS }}@github.com/sudarsana-reddy/clone-project.git    
           git remote -v
           git checkout main
           git pull

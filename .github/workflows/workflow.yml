@@ -47,7 +47,9 @@ jobs:
           echo "clone from parent-project"
           ls -ltr
           export 
-          git remote add sud https://${{ github.actor }}:${{ secrets.PAT_REPO_ACCESS }}@github.com/sudarsana-reddy/clone-project.git    
+          git remote add sud https://github.com/sudarsana-reddy/clone-project.git
+git config credential.username ${{ GitHub.actor }}
+git config credential.helper "!echo password=${{ secrets.PAT_REPO_ACCESS }}; echo"
           git remote -v
           git checkout main
           git pull

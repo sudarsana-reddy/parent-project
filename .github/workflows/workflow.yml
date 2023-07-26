@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
   
 permissions:
- contents: write
+  contents: write
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -46,7 +46,8 @@ jobs:
         run: |
           echo "clone from parent-project"
           ls -ltr
-          git remote add sud https://${{ secrets.PAT_REPO_ACCESS }}@github.com/sudarsana-reddy/clone-project.git    
+          export 
+          git remote add sud https://${{ github.actor }}:${{ secrets.PAT_REPO_ACCESS }}@github.com/sudarsana-reddy/clone-project.git    
           git remote -v
           git checkout main
           git pull

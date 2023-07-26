@@ -48,8 +48,8 @@ jobs:
           ls -ltr
           export 
           git remote add sud https://github.com/sudarsana-reddy/clone-project.git
-git config credential.username ${{ GitHub.actor }}
-git config credential.helper "!echo password=${{ secrets.PAT_REPO_ACCESS }}; echo"
+          git config credential.username ${{ github.actor }}
+          git config credential.helper "!echo password=${{ secrets.PAT_REPO_ACCESS }}; echo"
           git remote -v
           git checkout main
           git pull

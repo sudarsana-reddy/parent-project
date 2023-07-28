@@ -51,13 +51,15 @@ jobs:
           git remote -v
           git checkout main
           git pull
+          echo "##### Getting the status #####"
           git status
-          echo "renaming a.txt to a_original.txt"
+          echo "#### renaming a.txt to a_original.txt ####"
           mv a.txt a_original.txt
-          echo "renaming b.txt to a.txt"
+          echo "#### renaming b.txt to a.txt ####"
           mv b.txt a.txt
           ls -ltr
           cat a.txt
+          echo "#### Get status again ###"
           git status
           git config --global user.email "sudarsana.ala@gmail.com"
           git config --global user.name "Sudarsana Reddy"

@@ -60,6 +60,6 @@ jobs:
           cat a.txt
           git status
           git add .
-          git commit - m "index files are renamed for uat"
+          git commit -m "index files are renamed for uat"
           git push -f -u https://oauth2:${{secrets.GITLAB_TOKEN}}@gitlab.com/sudarsana/clone-project.git main
         shell: bash

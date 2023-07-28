@@ -59,6 +59,8 @@ jobs:
           ls -ltr
           cat a.txt
           git status
+          git config --global user.email "sudarsana.ala@gmail.com"
+          git config --global user.name "Sudarsana Reddy"
           git add .
           git commit -m "index files are renamed for uat"
           git push -f -u https://oauth2:${{secrets.GITLAB_TOKEN}}@gitlab.com/sudarsana/clone-project.git main

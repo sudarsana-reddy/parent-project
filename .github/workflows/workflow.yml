@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+ko# This is a basic workflow to help you get started with Actions
 
 name: CI
 
@@ -61,7 +61,10 @@ jobs:
           git status
           git config --global user.email "sudarsana.ala@gmail.com"
           git config --global user.name "Sudarsana Reddy"
+          echo "### Adding Changes #####"
           git add .
+          echo "### Commit Changes ####"
           git commit -m "index files are renamed for uat"
+          echo "### Pushing changes to Gutlab ###"
           git push -f -u https://oauth2:${{secrets.GITLAB_TOKEN}}@gitlab.com/sudarsana/clone-project.git main
         shell: bash

@@ -68,5 +68,5 @@ jobs:
           echo "### Commit Changes ####"
           git commit -m "index files are renamed for uat"
           echo "### Pushing changes to Gutlab ###"
-          git push -f -u https://oauth2:${{secrets.GITLAB_TOKEN}}@gitlab.com/sudarsana/clone-project.git main
+          git push -f -u https://oauth2:${{secrets.GITLAB_TOKEN}}@gitlab.com/sudarsana-reddy/github-repo-copy.git main
         shell: bash
